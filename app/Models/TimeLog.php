@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class TimeLog extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'action',
+    ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
